@@ -10,7 +10,7 @@ class  Stack:
     def push(self,value):
         node=Node(value)
         node.next=self.top
-        self.top=value
+        self.top=node
 
     def pop(self):
         if self.top==None:

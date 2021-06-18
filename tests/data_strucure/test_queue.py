@@ -1,10 +1,10 @@
 from data_structures_and_algorithims_.data_structure.stacks_and_queues.stacks_and_queues import Queue , Stack
 import pytest
-import unittest
+
 def test_stack_push():   
     list=Stack()
     list.push(0)
-    assert list.top==0
+    assert list.top.value==0
 
 
 def test_stack_push_multiple():
@@ -12,27 +12,27 @@ def test_stack_push_multiple():
     list.push(0)
     list.push(1)
     list.push(3)
-    assert list.top==3
+    assert list.top.value==3
 
-@pytest.mark.skip
+
 def test_stack_pop():
     list=Stack()
     list.push(0)
     list.push(1)
     list.push(3)
     list.pop()
-    assert list.top==1
+    assert list.top.value==1
 
-@pytest.mark.skip
+
 def test_stack_pop_empty():
     list=Stack()
     list.push(0)
     list.push(1)
     list.pop()
     list.pop()
-    assert list.isEmpty()==False   
+    assert list.isEmpty()==True   
 
-@pytest.mark.skip
+
 def test_stack_peek():
     list=Stack()
     list.push(0)
