@@ -113,7 +113,6 @@ class LinkedList:
 
 
 
-
 def zipLists(list_one,list_two):
     if (list_one.head==None):
         return list_two
