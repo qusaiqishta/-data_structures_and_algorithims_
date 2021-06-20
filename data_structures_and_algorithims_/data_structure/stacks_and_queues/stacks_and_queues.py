@@ -13,13 +13,12 @@ class  Stack:
         self.top=node
 
     def pop(self):
-        if self.top==None:
-            raise Exception('empty list')    
-
-       
-        popped=self.top.value
-        self.top=self.top.next # reassign the top to the next value
-        return popped
+        try:
+            popped=self.top.value
+            self.top=self.top.next # reassign the top to the next value
+            return popped
+        except:
+            return 'Empty Stack'
 
     def peek(self):
         if self.top==None:
@@ -29,6 +28,17 @@ class  Stack:
 
     def isEmpty(self):
         return self.top==None
+
+
+    def __str__(self):
+        stack_str = ""
+        if self.top:
+            current = self.top
+            while(current):
+                stack_str += f"[{ current.value }] -> "
+                current = current.next
+        stack_str += "NULL"
+        return (stack_str)    
 
 
 
@@ -72,7 +82,7 @@ if __name__ == '__main__':
     list.push(1)
     list.push(2)
     list.pop()
-    print(list.top)
+    print(list)
    
 
     # list1=Queue()
