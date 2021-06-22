@@ -13,7 +13,7 @@ dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then
 
 ## Approach & Efficiency
 
-Big(o)-> O(N)  linear 
+Big(o)-> O(N)linear 
 
 
 
