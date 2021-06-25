@@ -1,27 +1,24 @@
-open_list = ["[","{","("]
-close_list = ["]","}",")"]
-  
-def multi_bracket_validation(input):
-    stack = []
-    for i in input:
-        if i in open_list:
-            stack.append(i)
-        elif i in close_list:
-            pos = close_list.index(i)
-            if ((len(stack) > 0) and
-                (open_list[pos] == stack[len(stack)-1])):
-                stack.pop()
-            else:
-                return "False"
-    if len(stack) == 0:
-        return "True"
-    else:
-        return "False"
+import pysnooper
 
+@pysnooper.snoop('./snoop+logs.log') # just a tool to review the code line by line , all inside snoop+log.log file
+def multi_bracket_validation(text): # text is n length
+    stack = [] # as a stack
+    brack_dict = {'}':'{', ']':'[', ')':'('}
+    for char in text: # O(n)
+        # if open
+        if char in brack_dict.values(): # Hidden loop O(n) => Always size 3
+            stack.append(char)
+        # if closed
+        if char in brack_dict: # ] => Always size 3
+            bracket = stack.pop() # [
+            if brack_dict[char] != bracket:
+                return False
+        #if other, do nothing
+    if stack:
+        return False
+    return True
+# O(n^2) but it's really O(3*n)
 
-
-
-
-if __name__ == '__main__':
-    print(multi_bracket_validation('{[]{()}}'))
-    print(multi_bracket_validation('{[]{()}})'))
+if __name__=='__main__':
+    print(multi_bracket_validation('{}{Code}[Fellows](())'))
+    print(multi_bracket_validation('{}{'))
