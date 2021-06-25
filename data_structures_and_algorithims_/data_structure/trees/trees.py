@@ -103,7 +103,7 @@ class BST(Tree):
                     else:
                         go_deep(root.right)                
 
-                    go_deep(self.root)        
+            go_deep(self.root)        
 
     def contains(self,value):
         if not self.root:
