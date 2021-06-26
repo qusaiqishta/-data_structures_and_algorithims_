@@ -14,7 +14,7 @@ def multi_bracket_validation(text): # text is n length
     if stack:
         return False
     return True
-# O(n^2) but it's really O(3*n)
+
 
 if __name__=='__main__':
     print(multi_bracket_validation('{}{Code}[Fellows](())'))
