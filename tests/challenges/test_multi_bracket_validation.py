@@ -28,12 +28,14 @@ def test_two_square_brackets_one_para():
 def test_multible_para_with_text():
     actual=multi_bracket_validation('{}{Code}[Fellows](())')  
     expected=True
+    assert actual == expected 
 
 # test for [({}]
 
 def test_unbalanced():
     actual=multi_bracket_validation('[({}]')  
     expected=False
+    assert actual == expected 
 
 
 # test for (](
@@ -41,6 +43,7 @@ def test_unbalanced():
 def test_unbalanced_1():
     actual=multi_bracket_validation('(](')  
     expected=False
+    assert actual == expected 
         
 
 # test for {(})
@@ -48,6 +51,7 @@ def test_unbalanced_1():
 def test_unbalanced_2():
     actual=multi_bracket_validation('{(})')  
     expected=False
+    assert actual == expected 
                 
 
 
