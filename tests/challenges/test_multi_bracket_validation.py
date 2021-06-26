@@ -4,50 +4,54 @@ import pytest
 
 def test_single_brackets():
     actual=multi_bracket_validation('{}')
-    expected='True'
+    expected=True
     assert actual == expected
 
 
 def test_two_brackets_two_para():
     actual=multi_bracket_validation('{}(){}')
-    expected='True'
+    expected=True
     assert actual == expected
     
 def test_two_square_brackets_one_para_with_extra_char():
     actual=multi_bracket_validation('()[[Extra Characters]]')
-    expected='True'
+    expected=True
     assert actual == expected     
 
 def test_two_square_brackets_one_para():
     actual=multi_bracket_validation('()[[]]')
-    expected='True'
+    expected=True
     assert actual == expected     
 
 # test for {}{Code}[Fellows](())
 
 def test_multible_para_with_text():
     actual=multi_bracket_validation('{}{Code}[Fellows](())')  
-    expected='True'
+    expected=True
+    assert actual == expected 
 
 # test for [({}]
 
 def test_unbalanced():
     actual=multi_bracket_validation('[({}]')  
-    expected='False'
+    expected=False
+    assert actual == expected 
 
 
 # test for (](
 
 def test_unbalanced_1():
     actual=multi_bracket_validation('(](')  
-    expected='False'
+    expected=False
+    assert actual == expected 
         
 
 # test for {(})
 
 def test_unbalanced_2():
     actual=multi_bracket_validation('{(})')  
-    expected='False'
+    expected=False
+    assert actual == expected 
                 
 
 

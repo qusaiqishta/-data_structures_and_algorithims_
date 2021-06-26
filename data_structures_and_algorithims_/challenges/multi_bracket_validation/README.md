@@ -5,33 +5,34 @@ Given an expression string, write a python program to find whether a given strin
 
 ## Whiteboard Process
 
-![](/images/multi_bracket_validation.png)
+![](/images/multi_bracket_stack_solu.png)
 
 
 ## Approach & Efficiency
 
-Big(O)->O(N)
+Big(O)->O(3*N)
 
 
 ## Solution
 ```
-open_list = ["[","{","("]
-close_list = ["]","}",")"]
-
 def multi_bracket_validation('{}')
 stack=[]
+brack_dict = {'}':'{', ']':'[', ')':'('}
 
-for i in '{}'
-if i in open_list -> '{' is it is in open_list
-stack.append('{') -> stack=['{']
+for char  in '{}'  iteration1 targeted '{'
+if '{' in  barck_dict.values()     YESS IT IS
+stack.append({) => stack=['{']
 
-=>then check another bracket '}'
-elif i in closed_list => yes '}' is in 
-pos=close_list.index('}')=1
-if (1>0) and (open_list[1]==stack[0])  => True and True 
-stack.pop()
-stack=[]
+iteration2 
+if '}' in brack_dict.values()  NOOO
 
-if len(stack)==0 yess
-return True 
+if '}' in brack_dict:   Yess
+bracket=stack.pop()  => stack=[] , bracket=['{']
+
+if brack_dict['}']!=bracket:  it is equal
+
+if stack:  empty stack here
+  return false
+
+return True
 ```
