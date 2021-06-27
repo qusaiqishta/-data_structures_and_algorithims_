@@ -129,7 +129,7 @@ class BST(Tree):
 
     def contains(self,value):
         if not self.root:
-            raise AttributeError('Empty Tree')
+            return False
 
         current=self.root
 
