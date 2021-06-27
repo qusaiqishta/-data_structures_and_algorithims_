@@ -8,7 +8,7 @@ dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then
 
 ## Whiteboard process
 
-![](/images/Animal-shelter.png)
+![](/images/animal-shelter-fixed.png)
 
 
 ## Approach & Efficiency
@@ -18,24 +18,28 @@ Big(o)-> O(N)linear
 
 
 ## Solution
-
+```
 list:cat->cat->dog
-list.enqueu_animals('cat')o enqueu
-=>go the enqueue inside Queue class
-and add 'cat' to be the new rear
+list.enqueue('cat')
+
+new_animal='cat'
+self.rear!=None
+
+self.rear.next='cat'
+self.rear='cat'
 list:cat->cat->cat->dog
+-----------------
 
-dequeue_animals('cat')
-self.rear not none and ='cat'
+list.dequeue(CAT)=='cat'
 
-to_dequeue=self.front='dog'
-to_dequeue.next=cat
+while current.next
 
-while to_dequeue.next not none
-to_dequeue=to_dequeue.next='cat'
-
-
-removed =to_dequeue.next='cat'
-to_dequeue.next=to_dequeue.next.next
+if current.next.kind==kind  yess
+temp=current.next='cat'
+current.next=current.next.next='cat'
 
 return 'cat'
+
+list:cat->cat->dog
+
+```

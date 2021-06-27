@@ -71,7 +71,7 @@ tree=Tree()
     tree.root.right = Node(-3)
     tree.max_value()
 expected output=2000
-_________________________
+_______________________________________
 
 self.max=self.root.value=1
 max_(node)
