@@ -79,33 +79,7 @@ class Tree:
 
     def max_value(self):
         
-        # if self.root==None:
-        #     return ' Empty tree'
-
-        # max_val=self.root.value
-        # counter=0
-        # nodes=self.pre_order()
-        # length=len(nodes)  
        
-        # while(length):
-        
-        #     if int(nodes[counter])>int(max_val):
-        #         max_val=nodes[counter]
-        #         counter+=1
-        #         length-=1
-                       
-        # return max_val 
-
-
-        # if self.root==None:
-        #     return ' Empty tree'
-        # max_val=self.root.value
-        # nodes=self.pre_order()
-        # for node in nodes:
-        #     if int(node)>int(max_val):
-        #         max_val=node
-        # return max_val     
-
         self.max=self.root.value
 
         def max_(node):
@@ -191,3 +165,32 @@ if __name__ == '__main__':
     # trees.add(1)
     # print(trees.root.value)
     # print(trees.root.right.value)
+
+
+
+     # if self.root==None:
+        #     return ' Empty tree'
+
+        # max_val=self.root.value
+        # counter=0
+        # nodes=self.pre_order()
+        # length=len(nodes)  
+       
+        # while(length):
+        
+        #     if int(nodes[counter])>int(max_val):
+        #         max_val=nodes[counter]
+        #         counter+=1
+        #         length-=1
+                       
+        # return max_val 
+
+
+        # if self.root==None:
+        #     return ' Empty tree'
+        # max_val=self.root.value
+        # nodes=self.pre_order()
+        # for node in nodes:
+        #     if int(node)>int(max_val):
+        #         max_val=node
+        # return max_val     
