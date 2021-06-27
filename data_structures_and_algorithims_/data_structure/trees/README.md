@@ -38,3 +38,54 @@ Create a Binary Tree class
 - Add : Adds a new node with that value in the correct location in the binary search tree.
 
 - Contains : Returns boolean indicating whether or not the value is in the tree at least once.
+
+
+---
+
+# Max_tree
+
+##  Challenge Summary
+
+write a method that return 
+the maximum value in a tree
+
+
+
+
+## Whiteboard Process
+
+![](/images/max_tree.png)
+
+
+
+## Approach & Efficiency
+
+Big(O)->O(N)
+
+
+## Solution 
+```
+tree=Tree()
+    tree.root = Node(1)
+    tree.root.left = Node(2000)
+    tree.root.right = Node(-3)
+    tree.max_value()
+expected output=2000
+_________________________
+
+self.max=self.root.value=1
+max_(node)
+
+if node.right!=none   yess
+max_(-3)
+
+if self.max<node.right.value   NOO
+
+if node.left!=none    yess
+max_(2000)
+
+if self.max<node.left.value    yess
+self.max=self.left.value =200
+
+return 2000
+```
