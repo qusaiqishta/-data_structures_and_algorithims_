@@ -74,7 +74,55 @@ class Tree:
 
         _traverse(self.root)   
 
-        return output               
+        return output  
+
+
+    def max_value(self):
+        
+        # if self.root==None:
+        #     return ' Empty tree'
+
+        # max_val=self.root.value
+        # counter=0
+        # nodes=self.pre_order()
+        # length=len(nodes)  
+       
+        # while(length):
+        
+        #     if int(nodes[counter])>int(max_val):
+        #         max_val=nodes[counter]
+        #         counter+=1
+        #         length-=1
+                       
+        # return max_val 
+
+
+        # if self.root==None:
+        #     return ' Empty tree'
+        # max_val=self.root.value
+        # nodes=self.pre_order()
+        # for node in nodes:
+        #     if int(node)>int(max_val):
+        #         max_val=node
+        # return max_val     
+
+        self.max=self.root.value
+
+        def max_(node):
+            if self.max<node.value:
+                self.max=node.value
+
+            if node.right!=None:
+                max_(node.right)
+            if node.left!=None:
+                max_(node.left) 
+        max_(self.root)        
+
+        return self.max                      
+
+
+
+                          
 
 
 class BST(Tree):
@@ -125,18 +173,21 @@ class BST(Tree):
 
 if __name__ == '__main__':
     tree=Tree()
-    tree.root = Node('A')
-    tree.root.left = Node('B')
-    tree.root.right = Node('C')
-    tree.root.left.left = Node('D')
-    tree.root.left.right = Node('E')
-    tree.root.right.left = Node('F')     
+    tree.root = Node(1)
+    tree.root.left = Node(2000)
+    tree.root.right = Node(-3)
+    tree.root.left.left = Node(10)
+    tree.root.left.right=Node(100)
+    tree.root.left.right.right = Node(555)
+    tree.root.right.left = Node(111)     
     print(tree.pre_order())     
     print(tree.in_order())                                 
     print(tree.post_order())
+    print(tree.max_value())
+    
 
-    trees=BST()
-    trees.add(0)
-    trees.add(1)
-    print(trees.root.value)
-    print(trees.root.right.value)
+    # trees=BST()
+    # trees.add(0)
+    # trees.add(1)
+    # print(trees.root.value)
+    # print(trees.root.right.value)
