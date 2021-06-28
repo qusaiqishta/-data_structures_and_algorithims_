@@ -59,6 +59,14 @@ def test_BST_contains():
 
 def test_max_value(prepared_tree_num):
     assert prepared_tree_num.max_value()==10
+
+
+def test_breadth(prepared_tree_breadth):    
+    assert prepared_tree_breadth.breadth_first()==[1,2,3,4,5]
+
+def test_breadth_empty():
+    tree=Tree()    
+    assert tree.breadth_first()==None
         
 
 
@@ -84,4 +92,16 @@ def prepared_tree_num():
     tree.root.left.left = Node(10)
 
     return tree    
+
+@pytest.fixture
+def prepared_tree_breadth():
+    tree=Tree()
+    tree.root = Node(1)
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    tree.root.left.left = Node(4)
+    tree.root.left.right=Node(5)  
+
+    return tree    
+        
     

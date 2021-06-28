@@ -1,3 +1,5 @@
+from data_structures_and_algorithims_.data_structure.stacks_and_queues.stacks_and_queues import Queue
+
 class Node:
     def __init__(self,value):
         self.value = value
@@ -92,7 +94,31 @@ class Tree:
                 max_(node.left) 
         max_(self.root)        
 
-        return self.max                      
+        return self.max            
+
+
+    def breadth_first(self):
+        if self.root!=None:   
+
+            breadth=Queue()    
+            breadth.enqueue(self.root)
+
+            result=[]
+
+            while breadth.front:
+                current=breadth.front.value
+                if current.left:
+                    breadth.enqueue(current.left)
+                if current.right:
+                    breadth.enqueue(current.right)
+
+                result.append(current.value)
+                breadth.dequeue()
+                
+
+            return result    
+
+                
 
 
 
@@ -148,16 +174,15 @@ class BST(Tree):
 if __name__ == '__main__':
     tree=Tree()
     tree.root = Node(1)
-    tree.root.left = Node(2000)
-    tree.root.right = Node(-3)
-    tree.root.left.left = Node(10)
-    tree.root.left.right=Node(100)
-    tree.root.left.right.right = Node(555)
-    tree.root.right.left = Node(111)     
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    tree.root.left.left = Node(4)
+    tree.root.left.right=Node(5)  
     print(tree.pre_order())     
     print(tree.in_order())                                 
     print(tree.post_order())
     print(tree.max_value())
+    print(tree.breadth_first())
     
 
     # trees=BST()
