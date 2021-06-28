@@ -89,3 +89,76 @@ self.max=self.left.value =200
 
 return 2000
 ```
+
+
+---
+
+# breadth_first
+
+
+## Challenge Summary
+
+a function called breadth_first 
+that return a  list of all values in the tree, in the order they were encountered
+
+
+## Whiteboard Process
+
+![](/images/breadth_first.png)
+
+
+## Approach & Efficiency
+
+Big(O)->O(N)
+
+## Solution
+
+```
+
+input:  
+
+ tree.root = Node(1)
+    tree.root.left = Node(2)
+    tree.root.right = Node(3)
+    tree.root.left.left = Node(4)
+    tree.root.left.right=Node(5)  
+
+expected output:
+[1,2,3,4,5]
+
+breadth=Queue()
+
+self.root=1
+result=[]
+breadth.enqueu(1)
+while 1
+current=1
+if 2
+breadth.enqueu(2)
+
+if 3:
+breadth.enqueu(3)
+result.append(1)
+breadth.dequeue()
+result=[1]
+---------------------
+next current=2
+if 4
+breadth.enqueu(4)
+if 5
+breadth.enqueu(5)
+
+rsult.append(2)
+breadth.dequeue()
+
+result=[1,2]
+
+.
+.
+.
+so on
+
+rsult=[1,2,3,4,5]
+
+
+```
