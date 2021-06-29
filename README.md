@@ -11,3 +11,4 @@
 |Max Tree| [press here](data_structures_and_algorithims_/data_structure/trees/README.md)
 |Linked List| [press here](data_structures_and_algorithims_/data_structure/linkedlist/README.md)|
 |Breadth_first|[press here](data_structures_and_algorithims_/data_structure/trees/README.md)|
+|Fizz_Buzz_tree|[press here](data_structures_and_algorithims_/challenges/tree_fizz_buzz/README.md)|
