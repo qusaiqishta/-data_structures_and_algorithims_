@@ -97,26 +97,24 @@ class Tree:
         return self.max            
 
 
+
     def breadth_first(self):
-        if self.root!=None:   
-
-            breadth=Queue()    
+        if self.root!=None:
+            breadth=Queue()
             breadth.enqueue(self.root)
-
             result=[]
-
             while breadth.front:
                 current=breadth.front.value
                 if current.left:
                     breadth.enqueue(current.left)
                 if current.right:
-                    breadth.enqueue(current.right)
+                    breadth.enqueue(current.right) 
 
                 result.append(current.value)
                 breadth.dequeue()
-                
+            return result           
 
-            return result    
+
 
                 
 
