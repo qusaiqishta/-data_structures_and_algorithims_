@@ -1,7 +1,8 @@
-def reverse_array(array):
-    return array[::-1]  
+def reverse_array_1(array):
+    return array[::-1]
 
-print(reverse_array([1,2,3]))  
+
+print(reverse_array_1([1,2,3]))
 
 
 def reverse_array_2(array):
@@ -9,20 +10,21 @@ def reverse_array_2(array):
     for i in array:
         new_array.insert(0,i)
 
-    return new_array 
+    return new_array
 
 
-print(reverse_array_2([1,2,3]))   
+print(reverse_array_2([1,2,3]))
 
 
-def reverse(array):
+def reverse_array_3(array):
     new_array=[]
     for i in range(len(array)-1,-1,-1):
         new_array.append(array[i])
-        
+
     return new_array
-    
-print(reverse([1,2,3])) 
+
+
+print(reverse_array_3([1,7,3]))
 
 
 
