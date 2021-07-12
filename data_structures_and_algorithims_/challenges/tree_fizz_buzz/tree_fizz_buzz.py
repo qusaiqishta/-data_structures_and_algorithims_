@@ -6,38 +6,39 @@ from data_structures_and_algorithims_.data_structure.trees.trees import Node , T
 
 
 
-def rules(node):
-    if node.value%3==0 and node.value%5!=0:
-        return 'Fizz'
-    elif node.value%5==0 and node.value%3!=0:
-        return "Buzz"
-    elif node.value%3!=0 and node.value%5!=0:
-        return str(node.value)
-    else:
-        return "FizzBuzz"  
+
 def fizz_buzz_tree(tree):
-    output=[]
-    new_tree=tree
-    if new_tree.root:
-        output.append(rules(new_tree.root))
+    if tree.root:
+        output=[]
 
-        if new_tree.root.left:
-           output.append(rules(new_tree.root.left))
+        def _rules(node):
+            if node.value%3==0 and node.value%5==0:
+                output.append('FizzBuzz')
 
-        if new_tree.root.right:
-           output.append(rules(new_tree.root.right)) 
-        return output   
+            elif node.value%3==0:
+                output.append('Fizz')   
 
+            elif node.value%5==0:
+                output.append('Buzz')
+            elif node.value%5!=0 and node.value%3!=0:
+                output.append(str(node.value))      
+
+            if node.left:
+                _rules(node.left)
+            if node.right:
+                _rules(node.right)
+        _rules(tree.root)   
+        return output
     else:
-        new_tree.root =Node('Empty Tree')
-        return new_tree
-
+        tree.root=Node('empty tree') 
+        return tree   
 
 
 if __name__ == "__main__":
     b_tree = Tree()
     b_tree.root = Node(15)
     b_tree.root.left = Node(8)
+    b_tree.root.left.left=Node(11)
     b_tree.root.right= Node(9)
    
    
