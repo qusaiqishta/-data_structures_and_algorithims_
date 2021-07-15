@@ -4,7 +4,7 @@ class Node:
         self.value = value
         self.next = None
 
-class LinkedList:
+class LinkedList: 
     def __init__(self):
         self.head=None #start from empty list
 
@@ -92,23 +92,31 @@ class LinkedList:
             if current==None:
                 break
 
-        return result[::-1][k]  
+        return result[::-1][k] 
 
 
 
 
-   
+
     def __str__(self):
-         if self.head!=None:
-             list=''
-             current=self.head
-             while current:
-                 list+=f'{{{current.value}}} ->'   
-                 current=current.next
-             list+='NULL'
-             return list
-         else:
-            return 'It is an empty list !!!'   
+        values = []
+        current = self.head
+        while current:
+            values.append(current.value)
+            current = current.next
+        return f'{values}'
+   
+    # def __str__(self):
+    #      if self.head!=None:
+    #          list=''
+    #          current=self.head
+    #          while current:
+    #              list+=f'{{{current.value}}} ->'   
+    #              current=current.next
+    #          list+='NULL'
+    #          return list
+    #      else:
+    #         return 'It is an empty list !!!'   
 
 
 
