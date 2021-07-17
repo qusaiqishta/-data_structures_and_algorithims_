@@ -57,7 +57,7 @@ class HashTable:
 
 if  __name__ == '__main__':
     
-    hashTable=HashTable(1024)
+    hashTable=HashTable(100)
     # hashTable.add('avanti','112hp')
     # hashTable.add('crv','216hp')
     # hashTable.add('silent', True)
