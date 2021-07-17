@@ -28,7 +28,7 @@ def test_insert_output():
     ll.insert(1)
     ll.insert('qa')
     actual = ll.__str__()
-    expected='{1} ->{qa} ->NULL'
+    expected='{qa} ->{1} ->NULL'
     assert actual==expected    
 
 
@@ -83,7 +83,7 @@ def test_insert_before_head():
     list.append(3)
     list.append(5) 
     list.insertBefor(1,10)
-    assert list.head.next.value==3    
+    assert list.head.next.value==1    
 
 def test_insert_after_head():
     list=LinkedList()

@@ -8,15 +8,14 @@ class LinkedList:
     def __init__(self):
         self.head=None #start from empty list
 
-    def insert(self,value):
+    def insert(self,value): 
+
         new_node=Node(value)
         if self.head==None: # if there is no value as a head , make the new inserted on the head 
             self.head=new_node
         else:
-            current=self.head
-            while current.next!=None: # while a list doesn't contain an only value 
-                current=current.next # make a current value the one next to the head .. until current.next=none ,which mean the last elem
-            current.next=new_node   
+            new_node.next=self.head 
+            self.head=new_node
 
     def includes(self,value):
         current=self.head  # means start from the first element
@@ -39,6 +38,8 @@ class LinkedList:
             while current.next!=None:
                 current=current.next
             current.next=node
+
+           
 
     def insertBefor(self,value,newVal):
         if self.includes(value) == True:
@@ -128,11 +129,13 @@ if __name__ == '__main__':
     array.append(2)
 
     array.append(3)
-    array2.append(4)
-    array2.append(5)
-    array2.append(6)
+    array2.insert(1)
+    array2.insert(2)
+    array2.insert(3)
+
 
     print(array)
+    print(array2)
 
     
 
