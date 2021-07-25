@@ -21,7 +21,7 @@ first_repeated is a function that returns the first world/char repeated in a tex
 input: "Qusai omar fathi qishta qusai"
 
 expected output: 'qusai'
-___________________________________
+_____________________________
 dic={}
 r_str_as_list=['Qusai','omar','fathi','qishta','qusai']
 
