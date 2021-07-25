@@ -1,61 +1,47 @@
 from typing import Counter
 from data_structures_and_algorithims_.data_structure.stacks_and_queues.stacks_and_queues import Queue , Node , Stack
 
-
+class Cat:
+    def __init__(self,name):
+        self.name = name
+        self.kind='cat'
+       
 
 class Dog:
-    def __init__(self,value):
-        self.value = value
+    def __init__(self,name):
+        self.name=name
         self.kind='dog'
-        self.next=None
 
-class Cat:
-    def __init__(self,value):
-        self.value = value
-        self.kind='cat'
-        self.next=None        
+class Animal:
+    def __init__(self,name,kind):
+        self.name = name
+        self.kind = kind
+        
 
 
 class AnimalShelter:
-    def __init__(self):
-        self.front=None
-        self.rear=None
+   def __init__(self):
+       self.cat=Queue()
+       self.dog=Queue()
 
-
-    def enqueue_animals(self, animal):
-        new_animal=animal
-
-        if not self.rear:
-            self.rear=new_animal
-            self.front=new_animal
-        else:    
-            self.rear.next=new_animal
-            self.rear=new_animal    
-
-    def dequeue_animals(self,kind=None):
-        if not (kind=='dog') and not (kind=='cat'):
-            temp=self.front
-            self.front=self.front.next
-            return temp.value
-
+   def enqueue(self,animal):
+        if  animal =='cat':
+            self.cat.enqueue(animal)
+        elif animal =='dog':
+            self.dog.enqueue(animal)
         else:
-            current=self.front
-            if self.front.kind==kind:
-                temp=self.front
-                self.front=self.front.next
-                return temp.value
-            else:
-                while current.next:
-                    if current.next.kind==kind:
-                        temp=current.next
-                        current.next=current.next.next
-                        return temp.value
+            return " the animal should be either dog or cat"
+   def dequeue(self,pref=None):
+        if pref=='cat':
+            self.cat.dequeue().name 
+        elif pref=='dog':
+            self.dog.dequeue().name    
+        else:
+            return None     
 
-                    else:
-                        current=current.next
-                return None         
 
-    def __str__(self):
+
+   def __str__(self):
         queue_str = ""
         if self.front:
             current = self.front
@@ -70,13 +56,20 @@ class AnimalShelter:
         
 
 if __name__ == '__main__':
-    shelter =AnimalShelter()
-    shelter.enqueue_animals(Cat('test'))
-    shelter.enqueue_animals(Dog('test1'))
-    shelter.enqueue_animals(Cat('test2'))
-    print(shelter)
-    shelter.enqueue_animals(Dog('dog'))
-    print(str(shelter.dequeue_animals('dog')))
-    print(shelter.dequeue_animals('bird'))
-    
-    print(shelter)
+    dj = Dog('dj')
+    boby=Dog('boby')
+    mert=Dog('mert')
+    snow = Cat('snow')
+    amy=Cat('amy')
+    mshmsh=Cat('mshmsh')
+    hmed=Animal('hmed','hores')
+    animalShelter=AnimalShelter()
+    animalShelter.enqueue(dj)
+    animalShelter.enqueue(boby)
+    animalShelter.enqueue(mert)
+    animalShelter.enqueue(snow)
+    animalShelter.enqueue(amy)
+    animalShelter.enqueue(mshmsh)
+    # print(animalShelter.enqueue(hmed))
+    # print(animalShelter.dequeue('cat'))
+    print(animalShelter)

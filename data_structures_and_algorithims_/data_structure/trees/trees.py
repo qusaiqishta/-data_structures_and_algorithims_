@@ -10,6 +10,7 @@ class Tree:
     
     def __init__(self):
          self.root=None
+         
 
     def pre_order(self):
 
@@ -97,26 +98,24 @@ class Tree:
         return self.max            
 
 
+
     def breadth_first(self):
-        if self.root!=None:   
-
-            breadth=Queue()    
+        if self.root!=None:
+            breadth=Queue()
             breadth.enqueue(self.root)
-
             result=[]
-
             while breadth.front:
                 current=breadth.front.value
                 if current.left:
                     breadth.enqueue(current.left)
                 if current.right:
-                    breadth.enqueue(current.right)
+                    breadth.enqueue(current.right) 
 
                 result.append(current.value)
                 breadth.dequeue()
-                
+            return result           
 
-            return result    
+
 
                 
 
@@ -124,7 +123,7 @@ class Tree:
 
                           
 
-
+ 
 class BST(Tree):
     
     def add(self,value):
@@ -138,7 +137,7 @@ class BST(Tree):
                 if value < root.value: # search left
                     if not root.left: # in case there is no left branch
                         root.left=Node(value)  
-                        return 
+                         
 
                     else:
                         go_deep(root.left)     # if there is a left branch keep going  
@@ -146,7 +145,7 @@ class BST(Tree):
                 elif value > root.value:
                     if not root.right:
                         root.right=Node(value)
-                        return
+                        
 
                     else:
                         go_deep(root.right)                
@@ -174,22 +173,26 @@ class BST(Tree):
 if __name__ == '__main__':
     tree=Tree()
     tree.root = Node(1)
-    tree.root.left = Node(2)
-    tree.root.right = Node(3)
-    tree.root.left.left = Node(4)
-    tree.root.left.right=Node(5)  
-    print(tree.pre_order())     
-    print(tree.in_order())                                 
-    print(tree.post_order())
-    print(tree.max_value())
-    print(tree.breadth_first())
+    # tree.root.left = Node(2)
+    tree.root.right = Node(2)
+    # tree.root.left.left = Node(4)
+    tree.root.right.left=Node(3)
+    # print(tree.pre_order())     
+    # print(tree.in_order())                                 
+    # print(tree.post_order())
+    # print(tree.max_value())
+    # print(tree.breadth_first())
+    # print(tree.pre_order())
+    # print(tree.max_value())
     
 
-    # trees=BST()
-    # trees.add(0)
-    # trees.add(1)
-    # print(trees.root.value)
-    # print(trees.root.right.value)
+    trees=BST()
+    trees.add(0)
+    trees.add(-1)
+    trees.add(1)
+    print(trees.root.value)
+    print(trees.root.right.value)
+    print(trees.root.left.value)
 
 
 

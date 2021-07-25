@@ -11,9 +11,10 @@ def test_zip_1st_empty():
     list2.append(1)
     list2.append(2)
     list2.append(3)
+
     
     
-    assert str(zipLists(list1,list2))=="{1} ->{2} ->{3} ->NULL"
+    assert (zipLists(list1,list2)).__str__()=="{1} ->{2} ->{3} ->NULL"
 
 def test_zip_2nd_empty():
     list1=LinkedList()
