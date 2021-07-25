@@ -1,10 +1,7 @@
 def insertShiftArray(array,num):
    if len(array)%2==0:
       array.insert(int(len(array)/2),num)
-<<<<<<< HEAD
-      
-=======
->>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
+
    else:
       array.insert((int(len(array)/2)+1),num)
 
