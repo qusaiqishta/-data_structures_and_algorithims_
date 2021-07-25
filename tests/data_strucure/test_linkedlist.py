@@ -10,7 +10,8 @@ import pytest
 def test_insert_1():
     ll1 = LinkedList()
     ll1.insert(1)
-    actual = ll1.__str__()
+    actual=str(ll1)
+    
     expected='{1} ->NULL'
     assert actual==expected
 
@@ -83,7 +84,7 @@ def test_insert_before_head():
     list.append(3)
     list.append(5) 
     list.insertBefor(1,10)
-    assert list.head.next.value==1    
+    assert list.head.value==10   
 
 def test_insert_after_head():
     list=LinkedList()
@@ -104,7 +105,10 @@ def test_insert_after():
 
 def test_kth_from_end_k_greater_than_length():
     with pytest.raises(Exception):
-        assert input_list.kth_from_end(10)
+        assert input_list.kth_from_end(10)=='index out of range'
+
+   
+   
 
 def test_kth_from_end_k_less_than_zero():
     with pytest.raises(Exception):

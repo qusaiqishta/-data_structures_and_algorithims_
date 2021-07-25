@@ -10,6 +10,7 @@ class  Stack:
     def push(self,value):
         node=Node(value)
         node.next=self.top
+
         self.top=node
 
     def pop(self):
@@ -22,9 +23,10 @@ class  Stack:
 
     def peek(self):
         if self.top==None:
-            raise Exception('empty list')
+            self.isEmpty()
+        else:    
 
-        return self.top.value
+            return self.top.value
 
     def isEmpty(self):
         return self.top==None
@@ -72,26 +74,38 @@ class Queue:
     def isEmpty(self):
         return self.front==None
 
+    def __str__(self):
+        queue_str = ""
+        if self.front:
+            current = self.front
+            while(current):
+                queue_str += f"[{ current.value }] -> "
+                current = current.next
+        queue_str += "NULL"
+        return (queue_str)       
+
 
 
 if __name__ == '__main__':
     list=Stack()
-    print(list.isEmpty())
+  
 
-    list.push(0)
     list.push(1)
     list.push(2)
-    list.pop()
+    list.push(3)
+    
     print(list)
+ 
    
 
     # list1=Queue()
     # list1.enqueue(0)
     # list1.enqueue(1)
-    # print(list1.front.value)
-    # list1.dequeue()
-    # list1.dequeue()
-    # print(list1.isEmpty())
+    # list1.enqueue(2)
+    # print(str(list1))
+    # # list1.dequeue()
+    # # list1.dequeue()
+    # # print(list1.isEmpty())
  
 
     
