@@ -105,6 +105,7 @@ class LinkedList:
             if current==None:
                 break
 
+<<<<<<< HEAD
         return result[::-1][k]
 
     def kth_from_end_no_extra_space(self,k):
@@ -146,10 +147,15 @@ class LinkedList:
                 current=current.next
 
      
+=======
+        return result[::-1][k] 
+
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
 
 
 
 
+<<<<<<< HEAD
 
     # def __str__(self):
     #     values = []
@@ -159,17 +165,27 @@ class LinkedList:
     #         current = current.next
     #     return f'{values}'
    
+=======
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
     def __str__(self):
-         if self.head!=None:
-             list=''
-             current=self.head
-             while current:
-                 list+=f'{{{current.value}}} ->'   
-                 current=current.next
-             list+='NULL'
-             return list
-         else:
-            return 'It is an empty list !!!'   
+        values = []
+        current = self.head
+        while current:
+            values.append(current.value)
+            current = current.next
+        return f'{values}'
+   
+    # def __str__(self):
+    #      if self.head!=None:
+    #          list=''
+    #          current=self.head
+    #          while current:
+    #              list+=f'{{{current.value}}} ->'   
+    #              current=current.next
+    #          list+='NULL'
+    #          return list
+    #      else:
+    #         return 'It is an empty list !!!'   
 
 
 if __name__ == '__main__':
