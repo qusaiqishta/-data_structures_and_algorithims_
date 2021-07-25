@@ -200,17 +200,25 @@ if __name__=='__main__':
   list.append(2)
   list.append(3)
   print(list)
+<<<<<<< HEAD
+=======
+  list.reverseList()
+  print(list)
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
 
   list1=LinkedList()
 
   list1.append(4)
   list1.append(5)
   list1.append(6)
+<<<<<<< HEAD
   list1.append(7)
   list1.append(8)
   print(list1)
   
   print(zipLists(list,list1))
+=======
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
 
 
   

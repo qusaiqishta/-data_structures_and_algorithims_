@@ -5,7 +5,10 @@ from data_structures_and_algorithims_.data_structure.linkedlist.linkedlist impor
 
 class HashTable:
     def __init__(self,size):
+<<<<<<< HEAD
 
+=======
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
         self.size=size
         self.map=[None]*size
 
@@ -26,8 +29,13 @@ class HashTable:
         self.map[hashed_key].insert((key,value)) 
 
     def get(self,key):
+<<<<<<< HEAD
         index=self.hash(key)
         print('this is index: ' ,index)
+=======
+
+        index=self.hash(key)
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
         print('________from get')
 
         if  self.map[index]:    
@@ -60,8 +68,13 @@ if  __name__ == '__main__':
     
     hashTable=HashTable(100)
     # hashTable.add('avanti','112hp')
+<<<<<<< HEAD
     hashTable.add('crv','216hp')
     hashTable.add('silent', True)
+=======
+    # hashTable.add('crv','216hp')
+    # hashTable.add('silent', True)
+>>>>>>> 82c4a39ec20e4c5c83290074d8af81992c468636
     hashTable.add('listen', 'Hey man')
     # hashTable.hash('listen')
     print(hashTable.get('listen'))
