@@ -11,14 +11,17 @@ def first_repeated(r_str):
             dic[key]=1
         else:
             dic[key]=dic[key]+1
-    print(dic)     
+    print(dic)        
 # at this point , i have dic containing keys(chars) and values(frequency)
 
-    
+    counter=0
     for index in range(0,len(r_str_as_list)):
         if dic[r_str_as_list[index]]>=2:
-            return r_str_as_list[index]
+           counter+=1
+           return (r_str_as_list[index]) , counter
+         
+          
                       
 
-print(first_repeated("Qusai omar fathi qishta qusai"))               
+print(first_repeated("It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."))               
 
