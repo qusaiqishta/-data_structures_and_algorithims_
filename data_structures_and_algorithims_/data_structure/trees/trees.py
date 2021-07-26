@@ -1,5 +1,5 @@
 from data_structures_and_algorithims_.data_structure.stacks_and_queues.stacks_and_queues import Queue
-
+# just a comment
 class Node:
     def __init__(self,value):
         self.value = value
