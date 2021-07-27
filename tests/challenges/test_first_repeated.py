@@ -10,7 +10,7 @@ def first_repeated(r_str):
             dic[key]=1
         else:
             dic[key]=dic[key]+1
-    print(dic)     
+            break
 
     
     for index in range(0,len(r_str_as_list)):
@@ -30,6 +30,6 @@ def test_text_two():
 
 
 def test_text_three():
-    actual=first_repeated("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...")
-    expected='was'
+    actual=first_repeated("It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...")
+    expected='summer'
     assert actual==expected    
