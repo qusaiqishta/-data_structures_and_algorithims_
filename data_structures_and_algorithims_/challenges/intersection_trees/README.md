@@ -9,6 +9,7 @@ find the common nodes between two binary trees
 
 - Time complixity : O(3n)
 - space complixity: O(2n)
+---
 
 ## Solution
 ```
