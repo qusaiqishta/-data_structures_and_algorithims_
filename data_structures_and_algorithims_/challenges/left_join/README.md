@@ -8,7 +8,8 @@ Left_join is a function takes two hash tables , returns all key and values from 
 
 ## Approach & Efficiency
 - Big O of time : O(n^2)
-
+## White board
+![](/images/left_join_hashTable.png)
 - Big O of space : O(n)
 ## solution
 
