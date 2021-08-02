@@ -50,7 +50,9 @@ class Graph:
 
 
 if __name__ == '__main__':
-    
+    graph = Graph()
+    a = graph.add_node('a')
+    b = graph.add_node('b')
     c = graph.add_node('c')
     d = graph.add_node('d')
     e = graph.add_node('e')
@@ -70,4 +72,4 @@ if __name__ == '__main__':
     graph.add_edge(f, b)
     graph.add_edge(f, e)
 
-    print(graph.get_nodes())
+    print(graph)
