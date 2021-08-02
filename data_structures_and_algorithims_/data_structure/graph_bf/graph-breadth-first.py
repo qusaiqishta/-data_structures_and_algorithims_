@@ -1,5 +1,4 @@
-#   I CAN NOT IMPORT
-
+# CAN'T IMPORT FOR SOME REASONS
 from collections import deque
 class Queue():
     def __init__(self):
@@ -13,6 +12,8 @@ class Queue():
 
     def __len__(self):
         return len(self.dq)
+
+
 class Vertix:
     def __init__(self,value):
         self.value = value
@@ -55,19 +56,8 @@ class Graph:
     def size(self):
         return len(self.adjacency_list)    
 
-    def __str__(self):
-        output = ''
-        for vertix in self.adjacency_list.keys():
-            # Concatenate the value of vertix
-            output += vertix.value
-            # Iterate over all edges of this vertix
-            for edge in self.adjacency_list[vertix]:
-                output += ' -> ' + edge.vertix.value 
-            # Add a new line
-            output += '\n'
-        return output                      
-
     
+
     def breadth_first_search(self,start_node):
         nodes=[]
         visited=set()
@@ -76,85 +66,27 @@ class Graph:
         visited.add(start_node)
         while len(breadth):
             node=breadth.dequeue()
-            nodes.append(node.value)
+            nodes.append(node)
             
-            for vertix in self.adjacency_list:
+            for vertix in self.adjacency_list[node]:
                 if vertix not in visited:
                     breadth.enqueue(vertix)
                     visited.add(vertix)
         return nodes            
 
+    def __str__(self):
+        output = ''
+        for vertix in self.adjacency_list.keys():
+            # Concatenate the value of vertix
+            output += vertix.value
+            # Iterate over all edges of this vertix
+            for edge in self.adjacency_list[vertix]:
+                output += ' -> ' + edge.vertix.value 
+            # Add a new line  
+            output += '\n'
+        return output                          
 
-#_______________________________TESTS___________________________________________________________
-def test_add_node():
-    graph=Graph()
-    assert  graph.add_node('a').value=='a'
-
-def test_size_empty():
-    graph=Graph()
-    assert   graph.size()==0
-
-def test_size():
-    graph=Graph()
-    graph.add_node('a')
-    assert graph.size()==1
-
-def test_get_nodes():
-    g2 = Graph()
-    node1 = g2.add_node('a')
-    node2 = g2.add_node('b')
-    node3 = g2.add_node('c')
-    node4 = g2.add_node('d')
-
-    g2.add_edge(node1,node3)
-    g2.add_edge(node1,node4)
-    g2.add_edge(node2,node3)
-    nodes=g2.get_nodes()
-    result=[]
-    for node in nodes:
-        result.append(node.value)
-    assert result==['a', 'b', 'c', 'd']  
-
-def test_get_nodes_empty():
-    graph = Graph()
-    assert len(graph.get_nodes()) == 0
-
-def test_get_neighbors_node():
-    graph = Graph()
-    a = graph.add_node('a')
-    c = graph.add_node('c')
-    graph.add_edge(a, c)
-    actual=graph.get_neighbors(a)[0][0]
-    expected=c
-    assert actual==expected
-
-
-def test_no_neighbors():
-    graph = Graph()
-    a = graph.add_node('a')
-    neighbors = graph.get_neighbors(a)
-    assert len(neighbors) == 0
-    assert neighbors == []
-
-
-def test_add_edge():
-    graph=Graph()
-    start=graph.add_node('a')
-    end=graph.add_node('b')
-    graph.add_edge(start,end)
-    expected=end
-    actual = graph.get_neighbors(start)[0][0]
-    assert actual==expected
-
-def test_breadth_fisrt_graph():
-    graph = Graph()
-    node1 = graph.add_node('node1')
-    node2 = graph.add_node('node2')
-    node3 = graph.add_node('node3')
-    graph.add_edge(node1,node2,node3)
-    assert graph.breadth_first_search(node1) == ['node1','node2','node3']
-
-def test_breadth_first():
+if __name__ == '__main__':
     graph = Graph()
     a = graph.add_node('a')
     b = graph.add_node('b')
@@ -177,7 +109,4 @@ def test_breadth_first():
     graph.add_edge(f, b)
     graph.add_edge(f, e)
 
-    assert graph.breadth_first_search(a)==['a', 'b', 'c', 'd', 'e', 'f']
-
-
-   
+    print(graph.breadth_first_search(a))
