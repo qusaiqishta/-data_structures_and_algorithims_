@@ -55,18 +55,6 @@ class Graph:
     def size(self):
         return len(self.adjacency_list)    
 
-    def __str__(self):
-        output = ''
-        for vertix in self.adjacency_list.keys():
-            # Concatenate the value of vertix
-            output += vertix.value
-            # Iterate over all edges of this vertix
-            for edge in self.adjacency_list[vertix]:
-                output += ' -> ' + edge.vertix.value 
-            # Add a new line
-            output += '\n'
-        return output                      
-
     
     def breadth_first_search(self,start_node):
         nodes=[]
@@ -82,8 +70,40 @@ class Graph:
                 if vertix not in visited:
                     breadth.enqueue(vertix)
                     visited.add(vertix)
-        return nodes            
+        return nodes    
 
+    def __str__(self):
+        output = ''
+        for vertix in self.adjacency_list.keys():
+            # Concatenate the value of vertix
+            output += vertix.value
+            # Iterate over all edges of this vertix
+            for edge in self.adjacency_list[vertix]:
+                output += ' -> ' + edge.vertix.value 
+            # Add a new line
+            output += '\n'
+        return output                                  
+
+    
+def business_trip(graph,cities):
+    isdirect = True
+    cost = 0
+    for i in range(len(cities)-1):
+        for city in graph.get_neighbors(cities[i]):
+            if cities[i+1]==city[0]:
+                cost+=city[1]
+                break
+            else:
+                can=False
+        
+    if isdirect==False:
+            cost=0
+    
+    return isdirect, f'${cost}'
+
+
+
+    
 
 #_______________________________TESTS___________________________________________________________
 def test_add_node():
@@ -180,4 +200,32 @@ def test_breadth_first():
     assert graph.breadth_first_search(a)==['a', 'b', 'c', 'd', 'e', 'f']
 
 
-   
+def test_business_trip():
+    graph2 = Graph()
+
+    pandora= graph2.add_node('pandora')
+    arendelle= graph2.add_node('arendelle')
+    metroville= graph2.add_node('metroville')
+    narina= graph2.add_node('narina')
+    naboo= graph2.add_node('naboo')
+    manstropolis= graph2.add_node('manstropolis')
+
+    graph2.add_edge(pandora,arendelle,150)
+    graph2.add_edge(pandora,metroville,82)
+    graph2.add_edge(arendelle,pandora,150)
+    graph2.add_edge(arendelle,metroville,99)
+    graph2.add_edge(arendelle,manstropolis,42)
+    graph2.add_edge(metroville,pandora,82)
+    graph2.add_edge(metroville,arendelle,99)
+    graph2.add_edge(metroville,manstropolis,105)
+    graph2.add_edge(metroville,naboo,26)
+    graph2.add_edge(metroville,narina,37)
+    graph2.add_edge(narina,metroville,37)
+    graph2.add_edge(narina,naboo,250)
+    graph2.add_edge(naboo,narina,250)
+    graph2.add_edge(naboo,metroville,26)
+    graph2.add_edge(naboo,manstropolis,73)
+    graph2.add_edge(manstropolis,naboo,73)
+    graph2.add_edge(manstropolis,arendelle,42)
+    graph2.add_edge(manstropolis,metroville,105)
+    assert business_trip(graph2,[metroville,pandora]) == (True, '$82')   
