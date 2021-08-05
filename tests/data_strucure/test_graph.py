@@ -94,7 +94,7 @@ def business_trip(graph,cities):
                 cost+=city[1]
                 break
             else:
-                can=False
+                isdirect=False
         
     if isdirect==False:
             cost=0
